@@ -16,9 +16,9 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/hubxx/milvus-sdk/v2/entity"
 	"github.com/milvus-io/milvus-proto/go-api/v2/commonpb"
 	"github.com/milvus-io/milvus-proto/go-api/v2/milvuspb"
-	"github.com/milvus-io/milvus-sdk-go/v2/entity"
 )
 
 func (c *GrpcClient) checkCollField(ctx context.Context, collName string, fieldName string, filters ...func(string, string, *entity.Field) error) error {

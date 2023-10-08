@@ -6,7 +6,7 @@ import (
 
 	"github.com/cockroachdb/errors"
 
-	"github.com/milvus-io/milvus-sdk-go/v2/entity"
+	"github.com/hubxx/milvus-sdk/v2/entity"
 	"github.com/stretchr/testify/suite"
 
 	"github.com/stretchr/testify/mock"

@@ -18,7 +18,7 @@ import (
 
 	"google.golang.org/grpc"
 
-	"github.com/milvus-io/milvus-sdk-go/v2/entity"
+	"github.com/hubxx/milvus-sdk/v2/entity"
 )
 
 // Client is the interface used to communicate with Milvus
@@ -186,6 +186,8 @@ type Client interface {
 	ListUsers(ctx context.Context) ([]entity.User, error)
 	// Grant adds object privileged for role.
 	Grant(ctx context.Context, role string, objectType entity.PriviledgeObjectType, object string) error
+
+	Grant2(ctx context.Context, role string, objectType entity.PriviledgeObjectType, object string, privilege string, dbName string) error
 	// Revoke removes privilege from role.
 	Revoke(ctx context.Context, role string, objectType entity.PriviledgeObjectType, object string) error
 

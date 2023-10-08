@@ -1,7 +1,7 @@
 package common
 
 import (
-	"github.com/milvus-io/milvus-sdk-go/v2/entity"
+	"github.com/hubxx/milvus-sdk/v2/entity"
 )
 
 // -- create field --

@@ -7,7 +7,7 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/metadata"
 
-	"github.com/milvus-io/milvus-sdk-go/v2/internal/utils/crypto"
+	"github.com/hubxx/milvus-sdk/v2/internal/utils/crypto"
 )
 
 const (

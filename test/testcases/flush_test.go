@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/milvus-io/milvus-sdk-go/v2/test/common"
+	"github.com/hubxx/milvus-sdk/v2/test/common"
 	"github.com/stretchr/testify/require"
 )
 

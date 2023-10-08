@@ -19,9 +19,9 @@ package client
 import (
 	"context"
 
+	"github.com/hubxx/milvus-sdk/v2/entity"
 	"github.com/milvus-io/milvus-proto/go-api/v2/commonpb"
 	"github.com/milvus-io/milvus-proto/go-api/v2/milvuspb"
-	"github.com/milvus-io/milvus-sdk-go/v2/entity"
 )
 
 // CreateRole creates a role entity in Milvus.
@@ -164,6 +164,38 @@ func (c *GrpcClient) Grant(ctx context.Context, role string, objectType entity.P
 				Name: commonpb.ObjectType_name[int32(objectType)],
 			},
 			ObjectName: object,
+		},
+		Type: milvuspb.OperatePrivilegeType_Grant,
+	}
+
+	resp, err := c.Service.OperatePrivilege(ctx, req)
+	if err != nil {
+		return err
+	}
+
+	return handleRespStatus(resp)
+}
+
+func (c *GrpcClient) Grant2(ctx context.Context, role string, objectType entity.PriviledgeObjectType, object string, privilege string, dbName string) error {
+	if c.Service == nil {
+		return ErrClientNotReady
+	}
+
+	req := &milvuspb.OperatePrivilegeRequest{
+		Entity: &milvuspb.GrantEntity{
+			Role: &milvuspb.RoleEntity{
+				Name: role,
+			},
+			Object: &milvuspb.ObjectEntity{
+				Name: commonpb.ObjectType_name[int32(objectType)],
+			},
+			ObjectName: object,
+			Grantor: &milvuspb.GrantorEntity{
+				Privilege: &milvuspb.PrivilegeEntity{
+					Name: privilege,
+				},
+			},
+			DbName: dbName,
 		},
 		Type: milvuspb.OperatePrivilegeType_Grant,
 	}

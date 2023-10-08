@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/milvus-io/milvus-sdk-go/v2/entity"
+	"github.com/hubxx/milvus-sdk/v2/entity"
 )
 
 // const default value for test

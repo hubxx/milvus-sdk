@@ -19,8 +19,8 @@ package client
 import (
 	"context"
 
+	"github.com/hubxx/milvus-sdk/v2/entity"
 	"github.com/milvus-io/milvus-proto/go-api/v2/milvuspb"
-	"github.com/milvus-io/milvus-sdk-go/v2/entity"
 )
 
 // UsingDatabase for database operation after this function call.

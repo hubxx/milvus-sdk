@@ -9,8 +9,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/milvus-io/milvus-sdk-go/v2/client"
-	"github.com/milvus-io/milvus-sdk-go/v2/entity"
+	"github.com/hubxx/milvus-sdk/v2/client"
+	"github.com/hubxx/milvus-sdk/v2/entity"
 )
 
 func main() {
